@@ -3,5 +3,11 @@
 
 void greeter::greet()
 {
-  cout<<"Hello world\n";
+  cout<<"Hello world"<<endl;;
+}
+
+void greeter::greetBack()
+{
+	cout<<"Hey Yourself"<<endl;
+
 }

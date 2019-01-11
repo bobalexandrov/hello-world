@@ -14,7 +14,7 @@ all: greeter hello
 greeter: ${SRC_DIR}/greeter.cpp
 	${CC} -c -o ${OBJ_DIR}/$@.o -I${INCLUDE_DIR} ${SRC_DIR}/$@.cpp
 
-hello: ${SRC_DIR}/hello.cpp
+hello: ${SRC_DIR}/hello.cpp ${OBJ_DIR}/greeter.o
 	${CC} -o $@ -I${INCLUDE_DIR}  ${OBJ_DIR}/greeter.o ${SRC_DIR}/$@.cpp
 
 

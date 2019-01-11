@@ -9,6 +9,7 @@ class greeter
 
  public:
 	void greet();
+	void greetBack();
 };
 
 #endif
