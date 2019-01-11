@@ -17,5 +17,9 @@ greeter: ${SRC_DIR}/greeter.cpp
 hello: ${SRC_DIR}/hello.cpp ${OBJ_DIR}/greeter.o
 	${CC} -o $@ -I${INCLUDE_DIR}  ${OBJ_DIR}/greeter.o ${SRC_DIR}/$@.cpp
 
+libgreeter: ${SRC_DIR}/greeter.cpp
+	${CC} -fPIC -c -o ${OBJ_DIR}/greeter.o -I${INCLUDE_DIR} ${SRC_DIR}/greeter.cpp
+	${CC} -fPIC --shared  -o ${LIB_DIR}/$@.so ${OBJ_DIR}/greeter.o 
 
-
+libtest:
+	${CC} -o $@ -I${INCLUDE_DIR}  -L${LIB_DIR} -lgreeter ${SRC_DIR}/hello.cpp
